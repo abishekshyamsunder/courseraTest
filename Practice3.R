@@ -1,0 +1,16 @@
+library(datasets)
+data(iris)
+iris
+with(iris,tapply(Sepal.Length,Species,mean))
+val<-iris[,"Species"]=='virginica'
+temp<-iris[val,2]
+mean(temp)
+apply(iris[,1:4],2,mean)
+data(mtcars)
+lapply(mtcars,mean)
+sapply(split(mtcars$mpg,mtcars$cyl),mean)
+with(mtcars,tapply(mpg,cyl,mean))
+diftemp<-with(mtcars,tapply(hp,cyl,mean))
+tt1<-diftemp[1]
+tt2<-diftemp[3]
+abs(tt2-tt1)
